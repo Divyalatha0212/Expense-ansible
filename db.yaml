@@ -1,7 +1,7 @@
 - name: Configuring DB server
   hosts: db
   become: yes
-  vars: null
+  vars: 
   login host: asadi-devops.online
   vars_prompt:
     - name: mysql_root_password
