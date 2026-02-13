@@ -3,7 +3,7 @@
   become: yes
 
   vars:
-   login_hots: db.vadias.online
+   login_host: db.vadias.online
   vars_prompt:
   - name: mysql_root_password
     prompt: Please Enter MySQL root mysql_root_password
@@ -32,7 +32,7 @@
     community.mysql.mysql_info:
      login_user: root
      login_password: "{{ mysql_root_password }}" 
-     login_host: "{{ login_hosts }}"
+     login_host: "{{ login_host }}"
      filter: version
     ignore_errors: yes
     register: mysql_connection_output
