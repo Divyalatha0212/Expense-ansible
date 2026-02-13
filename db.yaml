@@ -24,7 +24,7 @@
      name:
      - PyMySQL
      - cryptography
-    executable: pip3.9
+    executable: pip3.9.25
 
 # Check password is already set up or not
 
