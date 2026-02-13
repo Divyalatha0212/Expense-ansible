@@ -31,8 +31,8 @@
   - name: check DB connection
     community.mysql.mysql_info:
      login_user: root
-     login_password: "{{ mmysql_root_password }}" 
-     login_host: "{{ db.vadias.online }}"
+     login_password: "{{ mysql_root_password }}" 
+     login_host: "{{ login_hosts }}"
      filter: version
     ignore_errors: yes
     register: mysql_connection_output
