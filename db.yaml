@@ -10,8 +10,13 @@
     private: no
 
 # Installing MySQL Server
-  tasks:  
-  - name: Insall MySQL Server
+  tasks:
+  - name: Install MySQL Server
+    ansible.builtin.dnf:
+     name: mysql-server
+     state: latest
+
+  - name: Start and enable MySQL Server
     ansible.builtin.service:
      name: mysql
      state: started
