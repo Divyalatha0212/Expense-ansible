@@ -7,7 +7,7 @@
 
   tasks:
   - name: disable default nodejs
-    ansible.builtin.command: dnf module diasable nodejs -y
+    ansible.builtin.command: dnf module disable nodejs -y
 
   - name: enable nodejs:20
     ansible.builtin.command: dnf module enable nodejs:20 -y
@@ -30,14 +30,14 @@
      state: directory
 
   - name: download backend code
-    ansible.builtin.gte_url:
+    ansible.builtin.get_url:
      url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
      dest: /tmp/backend.zip
 
   - name: unzip backend code
-    ansible.builtin.unarchives:
+    ansible.builtin.unarchive:
      src: /tmp/backend.zip
      dest: /app
-     remotesrc: yes
-                
+     remote_src: yes
+
 
