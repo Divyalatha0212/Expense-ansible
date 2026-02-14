@@ -2,7 +2,7 @@
   hosts: backend
   become: yes
   vars:
-   login_host: backend.vadias.online
+   login_host: db.vadias.online
    login_password: ExpenseApp@1
 
   tasks:
